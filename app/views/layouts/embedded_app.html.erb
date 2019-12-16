@@ -25,9 +25,10 @@
     <%= render 'layouts/flash_messages' %>
 
     <script src="https://cdn.shopify.com/s/assets/external/app.js?<%= Time.now.strftime('%Y%m%d%H') %>"></script>
-    <script type="text/javascript" src="https://accuage-cdn.s3.amazonaws.com/prd/accuage.js">
-      ageVerification = accuage.start(merchantToken="680c2594-c96b-4215-8472-824a730d5ed3");
-      ageVerification.setValuesManually(firstName="Scott", lastName="Joke", address="123 Fake st", address2="", city="Los Angeles", state="CA", zip="90005", email="scott@cookguy.com", phone="1234567890")
+
+    <script src="https://accuage-cdn.s3.amazonaws.com/prd/accuage.js"></script>
+    <script type="text/javascript">
+      accuage.start(merchantToken="5f899293-df1b-4431-a5ef-dee45556cb05")
     </script>
 
     <%= content_tag(:div, nil, id: 'shopify-app-init', data: {
