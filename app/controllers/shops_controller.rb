@@ -16,6 +16,6 @@ class ShopsController < ApplicationController
   end
 
   def load_store
-    @store = Store.find_by_shopify_domain(params["shop"])
+    @store = Shop.find_by_shopify_domain(params["shop"])
   end
 end
