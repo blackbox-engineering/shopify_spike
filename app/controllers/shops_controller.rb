@@ -31,4 +31,8 @@ class ShopsController < ApplicationController
     @shop = Shop.find_by_shopify_domain(params["shop"])
     @shop
   end
+
+  def allow_iframe
+    response.headers.except! 'X-Frame-Options'
+  end
 end
