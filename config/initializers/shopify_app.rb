@@ -11,6 +11,7 @@ ShopifyApp.configure do |config|
   config.session_repository = Shop
   config.scripttags = [
     {event:'onload', src: 'https://accuage-cdn.s3.amazonaws.com/prd/accuage.js'},
+    {event:'onload', src: 'https://accuage-cdn.s3.amazonaws.com/accuage-shopify.js'},
   ]
 end
 

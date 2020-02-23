@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_173430) do
+ActiveRecord::Schema.define(version: 2020_02_23_024138) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "shops", force: :cascade do |t|
     t.string "shopify_domain", null: false
     t.string "shopify_token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "merchant_token"
+    t.boolean "enabled"
     t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
 
