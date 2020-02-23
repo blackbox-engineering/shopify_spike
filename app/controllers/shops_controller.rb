@@ -4,12 +4,13 @@ class ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     @shop.update(shop_params)
+    render json: { merchant_token: @shop.merchant_token, enabled: @shop.enabled, status: 200 }
   end
 
 
   def show
     if headers_match? && load_store
-      render json: { merchant_token: @shop.merchant_token, status: 200 }
+      render json: { merchant_token: @shop.merchant_token, enabled: @shop.enabled, status: 200 }
     else
       render json: { "message": 'Invalid Request', status: 400 }
     end
