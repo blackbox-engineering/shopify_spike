@@ -4,6 +4,7 @@ class ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     @shop.update(shop_params)
+    render json: { merchant_token: @shop.merchant_token, enabled: @shop.enabled, status: 200 }
   end
 
 

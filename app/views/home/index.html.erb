@@ -1,5 +1,5 @@
 <div>
-  <%= form_for @shop do |form| %>
+  <%= form_for @shop, remote: true do |form| %>
     <%= form.label :merchant_token %>
     <%= form.text_field :merchant_token %>
     <br />

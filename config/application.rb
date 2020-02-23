@@ -14,7 +14,7 @@ module ShopifyAppSpike
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '/shop.json',
+        resource '/shops/*',
           headers: :any,
           methods: [:get, :options],
           credentials: false
