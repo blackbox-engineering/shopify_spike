@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
     puts(request.headers['origin'])
     puts(params['shop'])
 
-    request.headers['origin'] == params['shop']
+    request.headers['origin'].include?(params['shop'])
   end
 
   def load_store
