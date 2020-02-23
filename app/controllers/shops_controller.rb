@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 class ShopsController < ApplicationController
 
+  def update
+    @shop = Shop.find(params[:id])
+    @shop.update(shop_params)
+  end
+
+
   def show
     if headers_match? && load_store
       render json: { merchant_token: @shop.merchant_token, status: 200 }
@@ -10,6 +16,10 @@ class ShopsController < ApplicationController
   end
 
   private
+
+  def shop_params
+    params.require(:shop).permit(:merchant_token, :enabled)
+  end
 
   def headers_match?
     request.headers['origin'].include?(params['shop'])
