@@ -12,10 +12,15 @@ class ShopsController < ApplicationController
   private
 
   def headers_match?
-    request.headers['origin'] == params["shop"]
+    puts(request.headers['origin'])
+    puts(params['shop'])
+
+    request.headers['origin'] == params['shop']
   end
 
   def load_store
     @store = Shop.find_by_shopify_domain(params["shop"])
+    puts(@store)
+    @store
   end
 end
