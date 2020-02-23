@@ -1,52 +1,11 @@
 <div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label for="firstName">First name</label>
-      <input type="text" class="#firstNameInputId" id="firstNameInputId" />
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="lastName">Last name</label>
-      <input type="text" class="#lastNameInputId" id="lastNameInputId" />
-    </div>
-  </div>
-
-  <div class="mb-3">
-    <label for="address">Address</label>
-    <input type="text" class="#addressInputId" id="addressInputId" placeholder="1234 Main St" required="" />
-  </div>
-
-  <div class="mb-3">
-    <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-    <input type="text" class="#address2InputId" id="address2InputId" placeholder="Apartment or suite" />
-  </div>
-
-  <div class="row">
-    <div class="col-md-5 mb-3">
-      <label for="city">City</label>
-      <input type="text" class="#cityInputId" id="cityInputId" placeholder="Any City" required="" />
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="state">State</label>
-      <input type="text" class="#stateInputId" id="stateInputId" placeholder="Any City" required="" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="zip">Zip</label>
-      <input type="text" class="#zipInputId" id="zipInputId" placeholder="" required="" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="phone">Phone</label>
-      <input type="text" class="#phoneInputId" id="phoneInputId" placeholder="" required="" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="email">Email</label>
-      <input type="text" class="#emailInputId" id="emailInputId" placeholder="" required="" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="birthday">Birthday</label>
-      <input type="text" class="#birthdayInputId" id="birthdayInputId" placeholder="" required="" />
-    </div>
-  </div>
-  <form>
-    <input type="submit" id="checkoutButtonId" value="Submit">
-  </form>
+  <%= form_for @shop do |form| %>
+    <%= form.label :merchant_token %>
+    <%= form.text_field :merchant_tokend %>
+    <br />
+    <%= form.label :enabled %>
+    <%= form.check_box :enabled %>
+    <br />
+    <%= form.submit %>
+  <% end %>
 </div>

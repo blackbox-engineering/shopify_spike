@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
 
   def show
     if headers_match? && load_store
-      render json: { merchant_token: @store.merchant_token, status: 200 }
+      render json: { merchant_token: @shop.merchant_token, status: 200 }
     else
       render json: { "message": 'Invalid Request', status: 400 }
     end
@@ -12,15 +12,11 @@ class ShopsController < ApplicationController
   private
 
   def headers_match?
-    puts(request.headers['origin'])
-    puts(params['shop'])
-
     request.headers['origin'].include?(params['shop'])
   end
 
   def load_store
-    @store = Shop.find_by_shopify_domain(params["shop"])
-    puts(@store)
-    @store
+    @shop = Shop.find_by_shopify_domain(params["shop"])
+    @shop
   end
 end
