@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class ShopsController < ApplicationController
+  after_action :allow_iframe, only: :update
 
   def update
     @shop = Shop.find(params[:id])
