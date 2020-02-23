@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # https://github.com/Shopify/shopify_app/issues/814
 gem 'sprockets', '~> 3.0'
 
+gem 'rack-cors'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
