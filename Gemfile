@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'pg'
-gem 'shopify_app'
+gem 'shopify_app', '~> 12.0.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
 # Use Puma as the app server
@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # https://github.com/Shopify/shopify_app/issues/814
 gem 'sprockets', '~> 3.0'
+
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
